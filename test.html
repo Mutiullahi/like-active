@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="buttom">
+
+        <div class="thumb" onclick="checked()">
+            <span class="like">&hearts; </span>
+            <span class="like-react">Like</span>
+            <span class="num"></span>
+        </div>
+    </div>
+
+</body>
+<style>
+    .buttom{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .thumb{
+        border: 2px solid grey;
+        padding: 0px 10px;
+        cursor: pointer;
+        border-radius: 5px;
+        align-items: center;
+        display: flex;
+    }
+    .like{
+        font-size: 50px;
+        margin-right: 7px;
+        color: gray;
+    }
+    .like-react{
+        color: grey;
+        font-weight: 700;
+        font-size: 22px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    .num::before{
+        content: '0';
+        font-size: 20px;
+        color: gray;
+        font-weight: 900;
+        margin-left: 7px;
+    }
+    .thumb.heart-active{
+        border: 2px solid rgba(238, 50, 50, 0.742);
+        background-color: rgba(238, 50, 50, 0.742);
+    }
+    .like.heart-active{
+        color: red;
+    }
+    .like-react.heart-active{
+        color: black;
+    }
+    .num.heart-active::before{
+        content: '1';
+        color: red;
+    }
+</style>
+<!-- <script src="https://code.jquery-3.4.1.js"></script> -->
+<script>
+    // $(document).ready(function(){
+    //     $(".thumb").click(function(){
+    //         $(".thumb").toggleClass("heart-active")
+    //     });
+    // });
+    // this first query is react work but i dont get it that why i use normal js 
+btn =document.querySelector(".thumb")
+like =document.querySelector(".like")
+number =document.querySelector(".num")
+like_react =document.querySelector(".like-react")
+function checked(){
+    btn.classList.toggle("heart-active")
+    like.classList.toggle("heart-active")
+    number.classList.toggle("heart-active")
+    like_react.classList.toggle("heart-active")
+}
+</script>
+</html>
